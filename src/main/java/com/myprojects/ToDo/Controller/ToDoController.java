@@ -1,4 +1,4 @@
-package com.myprojects.ToDo;
+package com.myprojects.ToDo.Controller;
 
 import com.myprojects.ToDo.Model.ToDoEntity;
 import com.myprojects.ToDo.Service.ToDoService;
@@ -52,5 +52,10 @@ public class ToDoController {
     ResponseEntity<String> deleteTodoById(@PathVariable int id){
         toDoService.deleteToDo(id);
         return ResponseEntity.status(HttpStatus.OK).body("Todo was deleted successfully.");
+    }
+
+    @ExceptionHandler
+    void exceptionHandler(Exception ex){
+
     }
 }

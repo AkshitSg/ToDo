@@ -15,6 +15,9 @@ public class ToDoServiceImpl implements ToDoService {
 //    Creating innerDB(List) to store toDos.
     List<ToDoEntity> toDoList=new LinkedList<>();
     public ToDoEntity createToDo(ToDoEntity toDoEntity) {
+        Date currentDate=new Date();
+        toDoEntity.setCreatedDate(currentDate); // setting created date.
+        toDoEntity.setNewDate(currentDate);     // setting modified date.
         toDoList.add(toDoEntity);
         return toDoEntity;
     }
